@@ -1,0 +1,210 @@
+.products {
+  display: flex;
+  max-width: 900px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.products__card {
+  position: relative;
+  margin-bottom: 15px;
+  background-color: #fff;
+  width: 270px;
+  min-width: 270px;
+  margin-right: 26px;
+  padding-bottom: 15px;
+  @include radius(4px);
+  @include shadow(0 1px 2.8px 1.2px rgba(0, 0, 0, 0.09));
+
+  &:hover {
+    @include shadow(0 5px 10.56px 1.44px rgba(68, 190, 217, 0.36));
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.products__card--new:before {
+  content: "Новинка";
+  padding: 7px 4px 8px 6px;
+  text-transform: uppercase;
+  @include radius(3px);
+  font-family: "Open Sans SemiBold", "Arial", sans-serif;
+  background-color: rgb(72, 179, 203);
+  position: absolute;
+  top: 11px;
+  left: 12px;
+  @include font(11px, 12px, #fff);
+}
+
+.products__card--hit:before {
+  content: "Хит продаж";
+  padding: 8px 6px 7px 7px;
+  font-family: "Open Sans SemiBold", "Arial", sans-serif;
+  @include radius(3px);
+  background-color: #ffae2e;
+  text-transform: uppercase;
+  position: absolute;
+  top: 11px;
+  left: 13px;
+  @include font(11px, 12px, #fff);
+}
+
+.products__img {
+  width: 100%;
+  height: 234px;
+}
+
+.stars {
+  margin-top: 21px;
+  display: flex;
+  justify-content: center;
+}
+
+.stars__simple {
+  width: 15px;
+  height: 15px;
+  margin: 0 1.5px;
+  background: transparent url(../img/icons/start-simple.png) center center/contain no-repeat;
+}
+
+.stars__simple--active {
+  background-image: url(../img/icons/start-active.png);
+}
+
+.products__title {
+  @include font(14.7px, 2, #282828);
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+.products__line {
+  width: 79px;
+  height: 1px;
+  background-color: #dbdbdb;
+  border: none;
+  margin-bottom: 12px;
+}
+
+.products__price {
+  @include font(15px, 2, rgb(40, 40, 40));
+  font-weight: bold;
+}
+
+.similar-products__title {
+  margin-top: 3px;
+  padding-bottom: 13px;
+  font-size: 16px;
+  color: rgb(40, 40, 40);
+  text-transform: uppercase;
+}
+
+.similar-products__slider {
+  max-width: 890px;
+}
+
+.similar-products__slider > .products__card {
+  padding: 7.5px;
+}
+
+.similar-products__navigation {
+  margin-top: 30px;
+  margin-right: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.similar-products__dots > .slick-dots {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.similar-products__dots li {
+  font-size: 0;
+}
+
+.similar-products__dots button {
+  margin: 0 3.5px;
+  font-size: 0;
+  border: none;
+  width: 5px;
+  height: 5px;
+  padding: 0;
+  background-color: #cccccc;
+  @include radius(50%);
+}
+
+.similar-products__dots .slick-active button {
+  background-color: #e44256;
+}
+
+.similar-products__prev-slide,
+.similar-products__next-slide {
+  margin-right: 16.5px;
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgb(215, 215, 215);
+  @include radius(50%);
+  background: rgb(241, 241, 241) url(../img/icons/left-arrow.png) center center no-repeat;
+}
+
+.similar-products__next-slide {
+  margin-right: 0;
+  margin-left: 16.5px;
+  transform: rotate(180deg);
+}
+
+@media screen and (max-width: 1200px) {
+  .products-wrapper {
+    width: 100%;
+  }
+
+  .products {
+    margin: 0 auto;
+    justify-content: space-around;
+  }
+
+  .products__card {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .similar-products__title {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 992px) {
+
+}
+
+@media screen and (max-width: 991px) {
+  .similar-products__slider {
+    display: block;
+  }
+
+  .similar-products__slider .products__card {
+    margin: 5px;
+    min-width: 1px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+}
+
+@media screen and (max-width: 767px) {
+
+}
+
+@media screen and (max-width: 480px) {
+  .similar-products__slider .products__card {
+    margin-right: 20px;
+    margin-left: 20px;
+    min-width: unset;
+  }
+}
+
